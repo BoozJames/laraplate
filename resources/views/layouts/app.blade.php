@@ -22,7 +22,7 @@
 <body class="font-sans antialiased">
 
     {{-- The navbar with `sticky` and `full-width` --}}
-    <x-mary-nav full-width>
+    <x-mary-nav>
 
         <x-slot:brand>
             {{-- Drawer toggle for "main-drawer" --}}
@@ -78,19 +78,18 @@
         <x-slot:sidebar drawer="main-drawer" class="bg-base-400">
 
             {{-- Activates the menu item when a route matches the `link` property --}}
-            <x-mary-menu activate-by-route class="border border-dashed w-64 mt-3">
-                <x-mary-menu-item title="Home" icon="o-home" link="###" />
-                <x-mary-menu-item title="Messages" icon="o-envelope" link="###" />
+            <x-mary-menu activate-by-route class="border border-solid w-64 mt-3">
+
+                <x-mary-menu-item title="Home" icon="o-envelope" link="/" />
+
+                <x-mary-menu-item title="Messages" icon="o-paper-airplane" badge="78+" />
+
+                <x-mary-menu-item title="Hello" icon="o-sparkles" badge="new" badge-classes="!badge-primary" />
+
                 <x-mary-menu-sub title="Settings" icon="o-cog-6-tooth">
                     <x-mary-menu-item title="Wifi" icon="o-wifi" link="####" />
                     <x-mary-menu-item title="Archives" icon="o-archive-box" link="####" />
                 </x-mary-menu-sub>
-
-                <x-mary-menu-item title="Home" icon="o-envelope" />
-
-                <x-mary-menu-item title="Messages" icon="o-paper-airplane" badge="78+" />
-
-                <x-mary-menu-item title="Hello" icon="o-sparkles" badge="new" badge-classes="!badge-warning" />
 
                 <x-mary-menu-item title="Internal link" icon="o-arrow-down" link="/docs/components/alert" />
 
