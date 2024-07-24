@@ -32,6 +32,9 @@ class ClearCaches extends Command
 
         $progressBar->start();
 
+        $this->call('auth:clear-resets');
+        $progressBar->advance();
+
         $this->call('route:clear');
         $progressBar->advance();
 
@@ -42,6 +45,12 @@ class ClearCaches extends Command
         $progressBar->advance();
 
         $this->call('cache:clear');
+        $progressBar->advance();
+
+        $this->call('event:clear');
+        $progressBar->advance();
+
+        $this->call('optimize:clear');
         $progressBar->advance();
 
         $progressBar->finish();
